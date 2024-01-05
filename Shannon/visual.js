@@ -5,15 +5,27 @@ function grabbin(open, clos){
     row = open[i];
 
     // Will add persons name and age but needs formating 
-    clos.push([[row.Latitude, row.Longitude], row["Person Name"], row["Missing Age"], row["Missing From"]]);
     
+  
+    clos.push([[row.Latitude, row.Longitude], row["Person Name"], row["Missing Age"], row["Missing From"]]); 
   }
 
 }
+
+function count(loc,town){
+  let count = 0
+  for (let y = 0; y < loc.length; y++){
+    if (loc[y][0][0] == town[0] && loc[y][0][1] == town[1]){
+      count++
+    }
+  }
+  return count
+}
+
 let local = []
 grabbin(missing_people, local);
 
-
+console.log(count(local, local[0][0]))
 
 let cityMarkers = [];
 
@@ -32,13 +44,12 @@ for (let x = 0; x < local.length; x++) {
       L.circle(local[x][0], {
         stroke: false,
         fillOpacity: 0.75,
-        color: "white",
-        fillColor: "white",
-        radius: markerSize(locations[i].state.population)
+        color: "red",
+        fillColor: "red",
+        radius: count(local, local[x][0])*300
       })
   );
   }
-
 
 
 
@@ -65,8 +76,8 @@ let baseMaps = {
 
 // Overlays that can be toggled on or off
 let overlayMaps = {
-  // Locatons: cityLayer,
-  Dallas: cityLayer1
+  Locatons: cityLayer,
+  Radius: cityLayer1
 };
 
 // Create a map object, and set the default layers.
@@ -74,7 +85,7 @@ let overlayMaps = {
 let myMap = L.map("map", {
   center: [32.3732122, -94.0432419],
   zoom: 6,
-  layers: [street, cityLayer1]
+  layers: [street]
 });
 
 // Pass our map layers into our layer control.
