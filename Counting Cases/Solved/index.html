@@ -48,18 +48,29 @@
     fetch('../../Resources/final_cleaned_missing.json')
       .then(response => response.json())
       .then(jsonData => {
-        // Add markers to the map based on JSON data
-        jsonData.forEach(function (location) {
-          var marker = L.marker([location.Latitude, location.Longitude]).addTo(map);
 
-          // Change removed spaces from column name 
-          marker.bindPopup(location.name); // Add a popup with the location name
+        
+       
+      // Count occurrences of each location
+      const locationCount = {};
+      jsonData.forEach(location => {
+          const key = `${location.Latitude}-${location.Longitude}`;
+          locationCount[key] = (locationCount[key] || 0) + 1;
+
+          // Create marker with count
+          L.marker([location.Latitude, location.Longitude])
+            .addTo(map)
+            .bindPopup(`${location.Missing_Location} (Count: ${locationCount[key]})`);
         });
-      })
-      .catch(error => console.error('Error fetching JSON:', error));
+      });
+         
+      // Cluster Map
+  
   </script>
 
 
 </body>
 
 </html>
+
+
