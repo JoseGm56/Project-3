@@ -51,6 +51,24 @@ for (let x = 0; x < local.length; x++) {
   );
   }
 
+  let cityLayer2 = L.markerClusterGroup();
+
+  for (let m = 0; m < local.length; m++) {
+
+    // Set the data location property to a variable.
+    
+
+    // Check for the location property.
+   
+
+      // Add a new marker to the cluster group, and bind a popup.
+      let rat_marker = L.marker([local[m]][0][0], [local[m]][0][1]).bindPopup(`${local[m][1]}, Age: ${local[m][2]}`);
+      cityLayer2.addLayer(rat_marker);
+    }
+
+  
+
+
 
 
 // Add all the cityMarkers to a new layer group.
@@ -58,6 +76,9 @@ for (let x = 0; x < local.length; x++) {
 let cityLayer = L.layerGroup(cityMarkers);
 
 let cityLayer1 = L.layerGroup(cityMarkers1);
+
+
+
 // Define variables for our tile layers.
 
 let street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -68,16 +89,18 @@ let topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 });
 
+
 // Only one base layer can be shown at a time.
 let baseMaps = {
   Street: street,
-  Topography: topo
+  Topography: topo,
 };
 
 // Overlays that can be toggled on or off
 let overlayMaps = {
   Locatons: cityLayer,
-  Radius: cityLayer1
+  Radius: cityLayer1,
+  clust: cityLayer2
 };
 
 // Create a map object, and set the default layers.
