@@ -31,7 +31,7 @@ Our initial idea was to map missing persons cases in state and national parks an
 
 
 ## Data Sources
-For this project, we created one csv file containing data scraped directly from charleyprojec.org, a public database that records all reported cases of persons missing for at least one year. The final csv for analysis contained demographic information on missing persons as well as the dates and locations for which individials were reported missing 
+For this project, we created one csv file containing data scraped directly from charleyproject.org, a public database that records all reported cases of persons missing for at least one year. The final csv for analysis contained demographic information on missing persons as well as the dates and locations for which individials were reported missing 
 
 
 ## Conclusion
