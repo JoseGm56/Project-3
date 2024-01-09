@@ -38,4 +38,9 @@ For this project, we created one csv file containing data scraped directly from 
 Through the our data visualizations, we concluded that most missing cases occur in densely populated cities: 112 in Houston, 48 in Dallas, 41 in San Antinio, and 33 in Austin, whereas, smaller towns like Lubbock only contained 2 missing persons. Looking at the heat map demographics there appears to be a higher concentration of non-family abductions in the heart of major cities and a higher concentration of family adbuctions on the suburbs of large cities. There appears to be more migrant missing cases in south Texas which makes sense as it is closer to the border of Mexico. 
 To touch base on our original idea for the project, it cannot be concluded whether or not there is an increased amount of missing cases near national and state parks due to dense populations of large cities. We found it interesting that there does not appear to be any reported lost/injured cases on the heat map over Big Bend, which is the largest national park in Texas.
 
+### Contributions
+Jose Gonzalez - Data Scraping, Flask API, and Heat Maps
+Shannon Williams - Cluster Maps
+Nancy Ulloa - Data Cleaning and Conclusions
+Arle Alcid - Data Cleaning and ReadMe
 
