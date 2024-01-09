@@ -41,6 +41,6 @@ To touch base on our original idea for the project, it cannot be concluded wheth
 ### Contributions
 Jose Gonzalez - Data Scraping, Flask API, and Heat Maps
 Shannon Williams - Cluster Maps
-Nancy Ulloa - Data Cleaning and Conclusions
-Arle Alcid - Data Cleaning and ReadMe
+Nancy Ulloa - Data Cleaning Coordinates and Conclusions
+Arle Alcid - Final Data Cleaning and ReadMe 
 
